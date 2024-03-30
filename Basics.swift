@@ -6,8 +6,8 @@
 //? Constants and variables must be declared before they’re used. You declare constants with the let keyword and variables with the var keyword
 //? Here’s an example of how constants and variables can be used to track the number of login attempts a user has made:
 
-let name = "Mansi";
-var Sname = "Mahant";
+let Fname = "Bhavin";
+var Lname = "Pathak";
 
-print(name);
-print(Sname);
+print(Fname);
+print(Lname);
