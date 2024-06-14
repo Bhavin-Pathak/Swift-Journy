@@ -35,7 +35,6 @@ print(isM)
 print(str2)
 
 //MARK: Collecrtions (Arrayy-Sets-Dictionary)
-print("---------------------------------------")
 var array: [String] = []
 array = ["Bhavin","Pathak","iOSDeveloper"]
 print(array)
@@ -93,9 +92,9 @@ print("<---------- Dictionary Example ----------->")
 var disc: [Int:String] = [:]
 disc[0] = "Bhai"
 print(disc)
-print("---------------------------------------")
+print("----------------- Control Flow Statements ----------------------")
 var colours = ["Red","Blue","Pink","Green","Yellow","DarkGreen","Purple"]
-
+//MARK: For in Loop
 for colour in colours{
     print(colour)
 }
@@ -124,12 +123,87 @@ for s in colours.joined(){
     print("Joined Method = \(s)")
 }
 print("---------------------------------------")
+//MARK: While Loop
+// initialize the variable
+var i = 1, n = 5
+// while loop from i = 1 to 5
+while (i <= n) {
+  print(i)
+   i = i + 1
+}
+//MARK: If Condition
 
+print("----------------- FUNCTIONS METHODS ----------------------")
 //MARK: FUNCTIONS METHODS
-
+print("----------------- Function with return type ----------------------")
 func getName(fName: String) -> String {
     let fullName = fName
     return fullName
 }
-let ans = getName(fName: "Bhavin")
+let ans = getName(fName: "Bhavin Pathak")
+print(ans)
+print("----------------- Function with multiple return type ----------------------")
 
+func findlongNumber(listofNumber: [Int]) -> (minNum: Int, maxNum: Int) {
+    var minValue = listofNumber[0]
+    var maxValue = listofNumber[0]
+    for number in listofNumber {
+        if number > maxValue {
+            maxValue = number
+        }
+        if number < minValue{
+            minValue = number
+        }
+    }
+    return (minValue,maxValue)
+}
+
+let newans = findlongNumber(listofNumber: [3,2,5,4,3,23,345,6457,568,2,341,446,567,7])
+print(newans)
+print("----------------- Implicity Return ----------------------")
+func calNumbers(number1: Int, number2: Int) -> Int{
+    number1 + number2
+}
+let newans1 = calNumbers(number1: 20, number2: 30)
+print(newans1)
+print("----------------- ARGUMENT LABLE AND PERAMETER NAME ----------------------")
+func findName(with name: String) {
+    print("Hello = \(name)")
+}
+findName(with: "Bhavin")
+func findName2(_ name: String) {
+    print("Hello = \(name)")
+}
+findName2("Shivam")
+print("----------------- Default Value Perameter ----------------------")
+func calNumberForRes(num1: Int, num2: Int = 20) -> Int {
+     num1 + num2
+}
+print("calNumber = \(calNumberForRes(num1: 2))")
+print("----------------- Variadic perameter ----------------------")
+func caalculateAverage(numbers: Double...) -> Double {
+    var sum: Double = 0
+    var totalcount : Double = 0
+    for numbr in numbers{
+        sum += numbr
+        totalcount += 1
+    }
+    return sum / totalcount
+}
+print("CalculateAverage = \(caalculateAverage(numbers: 9,0,7,6,4,8,7,4,3,2,6,7))")
+print("----------------- Function Types Nasted Function ----------------------")
+
+func subNumbers(number1: Int, number2: Int) -> Int {
+    return number1 - number2
+}
+var sub: (Int,Int) -> Int = subNumbers
+let resu = sub(20,10)
+print("As a variable Function type = \(resu)")
+
+for i in 1...10 {
+    if i == 5 {
+        // exit the loop when i is equal to 5
+        continue
+    }
+    print(i)
+}
