@@ -135,3 +135,17 @@ print(isLeapYear(year))  // Output: true
 
 
 
+    func checkEvenOdd() {
+        print("Enter any number: ", terminator: "")
+        if let input = readLine(), let number = Int(input) {
+            if number % 2 == 0 {
+                print("Even num")
+            } else {
+                print("Odd num")
+            }
+        } else {
+            print("Invalid input. Please enter a valid number.")
+        }
+    }
+
+checkEvenOdd()
